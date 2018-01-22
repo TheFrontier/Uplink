@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "richminecraft",
+    "name": "RichMinecraft",
+    "description": "Adds Discord Rich Presence to Minecraft!",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "DotDash"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
