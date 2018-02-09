@@ -1,0 +1,207 @@
+[
+  {
+    "uid": "1da9b00b-8d50-40f4-bcf1-f58c989034c7",
+    "key": "ftb_trident",
+    "name": "FTB Trident"
+  },
+  {
+    "uid": "76b7c2bd-cb39-4ec4-a63e-fa71455959c1",
+    "name": "FTB Tech World 2",
+    "key": "ftb_tech_world_2"
+  },
+  {
+    "uid": "85ba015e-4445-4bc4-9b05-4bbc5010d531",
+    "key": "ftb_lite_2",
+    "name": "FTB Lite 2"
+  },
+  {
+    "uid": "cca5a251-89dc-451c-baff-e6ad6ded36c8",
+    "key": "ftb_crackpack",
+    "name": "FTB Crackpack"
+  },
+  {
+    "uid": "e6fae169-3d6e-4750-bf5d-888b14a39557",
+    "key": "ftb_lite_3",
+    "name": "FTB Lite 3"
+  },
+  {
+    "uid": "1dfd188b-9788-457a-b86b-6f98d1094d4b",
+    "key": "ftb_departed",
+    "name": "FTB Departed"
+  },
+  {
+    "uid": "694b4cb7-34bb-48c8-928f-04d4b84caa33",
+    "key": "ftb_revelation",
+    "name": "FTB Revelation"
+  },
+  {
+    "uid": "45aa29a6-8a4d-4f9c-bc2e-639bc910b591",
+    "key": "ftb_lite",
+    "name": "FTB Lite"
+  },
+  {
+    "uid": "5f11ae54-5f14-4dc7-b51b-36a9b437c984",
+    "key": "ftb_ultimate",
+    "name": "FTB Ultimate"
+  },
+  {
+    "uid": "680901d5-f7d6-4c61-ae4e-f72e0ae2b63b",
+    "key": "ftb_magic_world",
+    "name": "FTB Magic World"
+  },
+  {
+    "uid": "289aa604-0df2-4138-8bea-ab3624b96761",
+    "key": "ftb_magic_world_2",
+    "name": "FTB Magic World 2"
+  },
+  {
+    "uid": "67f958c9-250e-433c-9ab8-333afdd319c8",
+    "name": "FTB Direwolf20 1.4.7",
+    "key": "ftb_direwolf20_1_4_7"
+  },
+  {
+    "uid": "f45100c2-964d-475d-a922-3c29293e8540",
+    "name": "FTB Direwolf20 1.5.2",
+    "key": "ftb_direwolf20_1_5_2"
+  },
+  {
+    "uid": "ff1de791-abde-42ba-b923-421e332f78d9",
+    "key": "ftb_unleashed",
+    "name": "FTB Unleashed"
+  },
+  {
+    "uid": "2a357aab-4eb8-4bf4-b0d0-ef03ff7a1158",
+    "name": "FTB Retro SSP",
+    "key": "ftb_retro_ssp"
+  },
+  {
+    "uid": "afe0e71a-80c6-4753-bfb8-6b44f25689e8",
+    "name": "FTB Direwolf20 1.12",
+    "key": "ftb_direwolf20_1_12"
+  },
+  {
+    "uid": "a7c49026-4cf8-46bf-999f-b28644b5d26f",
+    "name": "FTB Infinity Lite 1.10",
+    "key": "ftb_infinity_lite_1_10"
+  },
+  {
+    "uid": "58e927d3-9e4b-41ae-96c4-a606e9af74d7",
+    "name": "FTB Skyfactory 2.5",
+    "key": "ftb_skyfactory_2_5"
+  },
+  {
+    "uid": "4c1c4cac-f94e-4e45-9695-38bc35f116a2",
+    "key": "ftb_monster",
+    "name": "FTB Monster"
+  },
+  {
+    "uid": "ad565c04-ddc7-4354-9c81-6b83a7849e56",
+    "name": "FTB Direwolf20 1.7",
+    "key": "ftb_direwolf20_1_7"
+  },
+  {
+    "uid": "42adce70-eb1a-4637-a80a-f9259bd91b14",
+    "key": "ftb_horizons_daybreaker",
+    "name": "FTB Horizons: Daybreaker"
+  },
+  {
+    "uid": "1faf74ae-21fe-4f97-9eb5-8d9b5fcfb9d4",
+    "key": "ftb_infinity_evolved_1_7",
+    "name": "FTB Infinity Evolved 1.7"
+  },
+  {
+    "uid": "35c14543-6138-467a-9280-fb3e72a74757",
+    "key": "ftb_retro_smp",
+    "name": "FTB Retro SMP"
+  },
+  {
+    "uid": "39429ab7-4a79-4200-ae2b-ad222ff21a0b",
+    "name": "FTB Beyond",
+    "key": "ftb_beyond"
+  },
+  {
+    "uid": "8f277a09-27d8-411c-b6ea-390f77f28ed3",
+    "key": "ftb_unhinged",
+    "name": "FTB Unhinged"
+  },
+  {
+    "uid": "a377812a-3a6f-47a8-aea0-04d505a8a79a",
+    "name": "FTB Horizons",
+    "key": "ftb_horizons"
+  },
+  {
+    "uid": "56fd0339-941d-4902-b5a8-c367954aeb58",
+    "name": "FTB Inventions",
+    "key": "ftb_inventions"
+  },
+  {
+    "uid": "faf54840-2e7e-4f6b-8dc7-e1c4b0fd5602",
+    "name": "FTB Skyfactory 3",
+    "key": "ftb_skyfactory_3"
+  },
+  {
+    "uid": "7474778c-1b2d-47cb-b834-19ed5018941e",
+    "name": "FTB Mindcrack Pack",
+    "key": "ftb_mindcrack"
+  },
+  {
+    "uid": "ac680454-411b-49c7-afc7-361efa89d63c",
+    "key": "ftb_cloud_9",
+    "name": "FTB Cloud 9"
+  },
+  {
+    "uid": "2e7623b6-0f7c-4179-a929-fedcc592b410",
+    "key": "ftb_mage_quest",
+    "name": "FTB Mage Quest"
+  },
+  {
+    "uid": "84b41319-a215-40c9-a5a4-1d17d08af297",
+    "key": "ftb_unstable_1_7_x",
+    "name": "FTB Unstable 1.7.x"
+  },
+  {
+    "uid": "48c2d9b5-ff01-4277-933b-c4a15087d65f",
+    "key": "ftb_unstable_1_12",
+    "name": "FTB Unstable 1.12"
+  },
+  {
+    "uid": "b3e56e1b-f792-44aa-9269-76b4359ed5c6",
+    "key": "ftb_vanilla_plus",
+    "name": "FTB Vanilla+"
+  },
+  {
+    "uid": "9e28ea1b-b5d0-4dd4-8f27-718fa2173331",
+    "name": "FTB HermitPack",
+    "key": "ftb_hermitpack"
+  },
+  {
+    "uid": "043c090a-864b-4ce1-8c14-69ca24bc00d5",
+    "name": "FTB Infinity Evolved Skyblock",
+    "key": "ftb_infinity_evolved_skyblock"
+  },
+  {
+    "uid": "8fa9580d-6963-4ce1-9122-6983a69f9493",
+    "name": "FTB Yogcraft",
+    "key": "ftb_yogcraft"
+  },
+  {
+    "uid": "a551dd2c-575b-4df2-b886-96eb7754cc47",
+    "name": "FTB Direwolf20 1.6.4",
+    "key": "ftb_direwolf20_1_6_4"
+  },
+  {
+    "uid": "9d4d2bc8-df2e-430b-af35-4552045b5185",
+    "key": "ftb_resurrection",
+    "name": "FTB Resurrection"
+  },
+  {
+    "uid": "3a59cc4a-3d3b-476b-9f04-635322395cec",
+    "name": "FTB Horizons III",
+    "key": "ftb_horizons_3"
+  },
+  {
+    "uid": "08fa3f13-2b60-4b41-9839-1eddf2174318",
+    "key": "ftb_tech_world",
+    "name": "FTB Tech World"
+  }
+]
