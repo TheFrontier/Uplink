@@ -22,7 +22,7 @@ Files stored here must be named `<client id>.json`, and must contain only an arr
 
 #### Example File:
 
-```
+```json
 [
   {
     "uid": "demo.spongepowered.org",
