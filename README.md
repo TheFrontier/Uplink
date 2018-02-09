@@ -16,7 +16,7 @@ Files stored here must be named `<client id>.json`, and must contain only an arr
 
 | Field | Type   | Description                                                        |
 |-------|--------|--------------------------------------------------------------------|
-| uid   | string | The exact IP address the user connects with.                       |
+| uid   | string | The exact IP address the user connects to.                       |
 | key   | string | The image key used to fetch the image from Discord's servers.      |
 | name  | string | The server address info to display when the image is hovered over. |
 
