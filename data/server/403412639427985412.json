@@ -5,6 +5,11 @@
     "name": "mc.phoenixmc.co"
   },
   {
+    "uid": "mc.flamenetwork.net",
+    "key": "server-mc_flamenetwork_net",
+    "name": "mc.flamenetwork.net"
+  },
+  {
     "uid": "demo.spongepowered.org",
     "key": "server-demo_spongepowered_org",
     "name": "demo.spongepowered.org"
