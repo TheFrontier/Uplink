@@ -1,7 +1,7 @@
 [
   {
-    "modid": "richminecraft",
-    "name": "RichMinecraft",
+    "modid": "uplink",
+    "name": "Uplink",
     "description": "Adds Discord Rich Presence to Minecraft!",
     "version": "${version}",
     "mcversion": "${mcversion}",

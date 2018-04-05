@@ -1,27 +1,21 @@
 package io.github.thefrontier.uplink.config;
 
-import ninja.leaping.configurate.objectmapping.Setting;
-import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
-
-@ConfigSerializable
 public class Config {
 
-    @Setting
-    public DisplayData displayData = new DisplayData();
+    public String clientId;
 
-    @ConfigSerializable
-    public static class DisplayData {
+    public String smallDataUid;
 
-        @Setting
-        public String clientId;
+    public boolean hideUnknownIPs;
 
-        @Setting
-        public String smallDataUid;
+    public DisplayUrls displayUrls = new DisplayUrls();
 
-        @Setting
-        public String baseUrl;
+    public static class DisplayUrls {
 
-        @Setting
-        public boolean hideUnknownIps;
+        public String gui;
+
+        public String server;
+
+        public String small;
     }
 }

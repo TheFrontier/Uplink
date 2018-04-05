@@ -1,47 +1,51 @@
 package io.github.thefrontier.uplink.config;
 
-import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import io.github.thefrontier.uplink.config.display.GuiDisplay;
 import io.github.thefrontier.uplink.config.display.ServerDisplay;
-import io.github.thefrontier.uplink.config.display.SmallDataDisplay;
-import ninja.leaping.configurate.json.JSONConfigurationLoader;
-import ninja.leaping.configurate.objectmapping.ObjectMappingException;
+import io.github.thefrontier.uplink.config.display.SmallDisplay;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class DisplayDataManager {
 
-    private final Config config;
-
-    private final JSONConfigurationLoader smallDataLoader;
-    private final JSONConfigurationLoader serversLoader;
-
-    private Map<String, SmallDataDisplay> smallDataDisplays;
+    private Map<String, String> guiDisplays;
+    private Map<String, SmallDisplay> smallDisplays;
     private Map<String, ServerDisplay> serverDisplays;
 
-    public DisplayDataManager(Config config) throws IOException, ObjectMappingException {
-        this.config = config;
+    public DisplayDataManager(Logger logger, Config config) throws IOException {
+        Gson gson = new GsonBuilder().create();
 
-        this.smallDataLoader = JSONConfigurationLoader.builder()
-                .setURL(new URL(this.config.displayData.baseUrl + "smallData/" + this.config.displayData.clientId + ".json"))
-                .build();
-        this.serversLoader = JSONConfigurationLoader.builder()
-                .setURL(new URL(this.config.displayData.baseUrl + "servers/" + this.config.displayData.clientId + ".json"))
-                .build();
+        URL guiUrl = new URL(config.displayUrls.gui + config.clientId + ".json");
+        URL smallUrl = new URL(config.displayUrls.small + config.clientId + ".json");
+        URL serverUrl = new URL(config.displayUrls.server + config.clientId + ".json");
 
-        this.smallDataDisplays = this.smallDataLoader.load().getList(TypeToken.of(SmallDataDisplay.class)).stream()
-                .collect(Collectors.toMap(SmallDataDisplay::getUid, SmallDataDisplay::self));
-        this.serverDisplays = this.serversLoader.load().getList(TypeToken.of(ServerDisplay.class)).stream()
+        SmallDisplay[] smallArr = gson.fromJson(new InputStreamReader(smallUrl.openStream()), SmallDisplay[].class);
+        ServerDisplay[] serverArr = gson.fromJson(new InputStreamReader(serverUrl.openStream()), ServerDisplay[].class);
+
+        this.guiDisplays = gson.fromJson(new InputStreamReader(guiUrl.openStream()), GuiDisplay.class).classNameToInfo;
+        this.smallDisplays = Arrays.stream(smallArr)
+                .collect(Collectors.toMap(SmallDisplay::getUid, SmallDisplay::self));
+        this.serverDisplays = Arrays.stream(serverArr)
                 .collect(Collectors.toMap(ServerDisplay::getUid, ServerDisplay::self));
 
-        System.out.println("Small Data Uids: " + this.smallDataDisplays.keySet());
-        System.out.println("Server Uids: " + this.serverDisplays.keySet());
+        logger.trace("Loaded Small Data: " + this.smallDisplays.keySet());
+        logger.trace("Loaded Servers: " + this.serverDisplays.keySet());
     }
 
-    public Map<String, SmallDataDisplay> getSmallDataDisplays() {
-        return smallDataDisplays;
+    public Map<String, String> getGuiDisplays() {
+        return guiDisplays;
+    }
+
+    public Map<String, SmallDisplay> getSmallDisplays() {
+        return smallDisplays;
     }
 
     public Map<String, ServerDisplay> getServerDisplays() {

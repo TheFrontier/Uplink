@@ -7,4 +7,8 @@ public class MiscUtil {
     public static String getIGN() {
         return Minecraft.getMinecraft().getSession().getProfile().getName();
     }
+
+    public static long epochSecond() {
+        return System.currentTimeMillis() / 1000;
+    }
 }

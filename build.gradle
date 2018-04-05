@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        mavenCentral()
         jcenter()
         maven {
             name = "forge"
@@ -37,14 +38,13 @@ repositories {
 }
 
 configurations {
-    shade
-    compile.extendsFrom(shade)
+    embed
+    compile.extendsFrom(embed)
 }
 
 dependencies {
-    shade 'com.github.MinnDevelopment:Java-DiscordRPC:v1.3.1'
-    shade 'com.github.MinnDevelopment:discord-rpc-release:-SNAPSHOT'
-    shade 'ninja.leaping.configurate:configurate-json:3.3'
+    embed 'com.github.MinnDevelopment:Java-DiscordRPC:v1.3.1'
+    compile 'com.github.MinnDevelopment:discord-rpc-release:v3.1.0'
 }
 
 processResources {
@@ -67,7 +67,7 @@ processResources {
 }
 
 jar {
-    from configurations.shade.collect { it.isDirectory() ? it : zipTree(it) }
+    from configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
 }
 
-jar.archiveName = "${modBaseName}-${project.minecraft.version}-${project.version}.jar"
+jar.archiveName = "${modBaseName}-${project.minecraft.version}-${project.version}-mod.jar"

@@ -1,6 +1,6 @@
 package io.github.thefrontier.uplink.config.display;
 
-public class ServerDisplay {
+public class SmallDisplay {
 
     public String uid;
 
@@ -12,7 +12,7 @@ public class ServerDisplay {
         return uid;
     }
 
-    public ServerDisplay self() {
+    public SmallDisplay self() {
         return this;
     }
 }
