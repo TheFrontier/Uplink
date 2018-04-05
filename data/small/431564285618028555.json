@@ -1,32 +1,32 @@
 [
   {
-    "uid": "modpack-byd"
-    "key": "modpack-byd"
+    "uid": "modpack-byd",
+    "key": "modpack-byd",
     "name": "FTB: Beyond"
   },
   {
-    "uid": "modpack-dw20"
-    "key": "modpack-dw20"
+    "uid": "modpack-dw20",
+    "key": "modpack-dw20",
     "name": "FTB Presents: Direwolf20 1.12"
   },
   {
-    "uid": "modpack-ie"
-    "key": "modpack-ie"
+    "uid": "modpack-ie",
+    "key": "modpack-ie",
     "name": "FTB: Infinity Evolved 1.7"
   },
   {
-    "uid": "modpack-rev"
-    "key": "modpack-rev"
+    "uid": "modpack-rev",
+    "key": "modpack-rev",
     "name": "FTB: Revelation"
   },
   {
-    "uid": "modpack-sf3"
-    "key": "modpack-sf3"
+    "uid": "modpack-sf3",
+    "key": "modpack-sf3",
     "name": "FTB Presents: Skyfactory 3"
   },
   {
-    "uid": "modpack-tl"
-    "key": "modpack-tl"
+    "uid": "modpack-tl",
+    "key": "modpack-tl",
     "name": "Tekkit Legends"
   },
 ]
