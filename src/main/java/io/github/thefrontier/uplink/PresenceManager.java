@@ -15,7 +15,7 @@ class PresenceManager {
     private final Config config;
 
     private final DiscordRichPresence loadingGame = new DiscordRichPresence();
-    private final DiscordRichPresence gui = new DiscordRichPresence();
+    private final DiscordRichPresence mainMenu = new DiscordRichPresence();
     private final DiscordRichPresence inGame = new DiscordRichPresence();
 
     private PresenceState curState = PresenceState.INIT;
@@ -28,8 +28,9 @@ class PresenceManager {
         loadingGame.largeImageKey = "state-default";
         loadingGame.largeImageText = "Minecraft";
 
-        gui.largeImageKey = "state-default";
-        gui.largeImageText = "Minecraft";
+        mainMenu.state = "In the Main Menu";
+        mainMenu.largeImageKey = "state-default";
+        mainMenu.largeImageText = "Main Menu";
 
         SmallDisplay smallData = dataManager.getSmallDisplays().get(this.config.smallDataUid);
 
@@ -40,8 +41,8 @@ class PresenceManager {
         loadingGame.smallImageKey = smallData.getKey();
         loadingGame.smallImageText = smallData.getName();
 
-        gui.smallImageKey = smallData.getKey();
-        gui.smallImageText = smallData.getName();
+        mainMenu.smallImageKey = smallData.getKey();
+        mainMenu.smallImageText = smallData.getName();
 
         inGame.smallImageKey = smallData.getKey();
         inGame.smallImageText = smallData.getName();
@@ -72,11 +73,10 @@ class PresenceManager {
         return loadingGame;
     }
 
-    DiscordRichPresence gui(Class<?> clazz) {
-        gui.state = dataManager.getGuiDisplays().get(clazz.getSimpleName());
-        gui.startTimestamp = epochSecond();
+    DiscordRichPresence mainMenu() {
+        mainMenu.startTimestamp = epochSecond();
 
-        return gui;
+        return mainMenu;
     }
 
     DiscordRichPresence ingameMP(String ip, int playerCount, int maxPlayers) {

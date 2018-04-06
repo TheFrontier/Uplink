@@ -47,15 +47,10 @@ public class Uplink {
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
-        try {
-            PresenceManager manager = setupPresenceManager(event.getModConfigurationDirectory().toPath().resolve
-                    ("Uplink.json"));
-            setupRichPresence(manager);
+        PresenceManager manager = setupPresenceManager(event.getModConfigurationDirectory().toPath().resolve("Uplink.json"));
+        setupRichPresence(manager);
 
-            MinecraftForge.EVENT_BUS.register(new PresenceListener(RPC, manager));
-        } catch (NullPointerException e) {
-            LOGGER.error("NullPointerException!", e);
-        }
+        MinecraftForge.EVENT_BUS.register(new PresenceListener(RPC, manager));
     }
 
     private PresenceManager setupPresenceManager(Path configPath) {

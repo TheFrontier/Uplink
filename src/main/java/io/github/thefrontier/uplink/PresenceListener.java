@@ -55,7 +55,7 @@ public class PresenceListener {
     public void onMainMenu(GuiOpenEvent event) {
         if (event.getGui() instanceof GuiMainMenu && presenceManager.getCurState() != PresenceState.MENU_MAIN) {
             presenceManager.setCurState(PresenceState.MENU_MAIN);
-            rpc.Discord_UpdatePresence(presenceManager.gui(GuiMainMenu.class));
+            rpc.Discord_UpdatePresence(presenceManager.mainMenu());
         }
     }
 
@@ -84,7 +84,7 @@ public class PresenceListener {
 
     @SubscribeEvent
     public void onClientDisconnect(FMLNetworkEvent.ClientDisconnectionFromServerEvent event) {
-        rpc.Discord_UpdatePresence(presenceManager.gui(GuiMainMenu.class));
+        rpc.Discord_UpdatePresence(presenceManager.mainMenu());
         presenceManager.setCurState(PresenceState.MENU_MAIN);
     }
 }
