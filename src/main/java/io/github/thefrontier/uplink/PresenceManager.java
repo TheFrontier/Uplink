@@ -30,7 +30,7 @@ class PresenceManager {
 
         mainMenu.state = "In the Main Menu";
         mainMenu.largeImageKey = "state-default";
-        mainMenu.largeImageText = "Minecraft";
+        mainMenu.largeImageText = "Main Menu";
 
         SmallDisplay smallData = dataManager.getSmallDisplays().get(this.config.smallDataUid);
 
