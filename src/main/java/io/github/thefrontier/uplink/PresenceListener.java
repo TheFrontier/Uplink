@@ -46,7 +46,6 @@ public class PresenceListener {
                 if (this.curPlayerCount != playerCount) {
                     rpc.Discord_UpdatePresence(presenceManager.updatePlayerCount(playerCount, maxPlayers));
                     this.curPlayerCount = playerCount;
-                    logger.info("Server Player Count: " + playerCount + "/" + maxPlayers);
                 }
             } catch (NullPointerException ignored) {
             }
@@ -59,7 +58,7 @@ public class PresenceListener {
     public void onMainMenu(GuiOpenEvent event) {
         if (event.gui instanceof GuiMainMenu && presenceManager.getCurState() != PresenceState.MENU_MAIN) {
             presenceManager.setCurState(PresenceState.MENU_MAIN);
-            rpc.Discord_UpdatePresence(presenceManager.gui(GuiMainMenu.class));
+            rpc.Discord_UpdatePresence(presenceManager.mainMenu());
         }
     }
 
@@ -88,7 +87,7 @@ public class PresenceListener {
 
     @SubscribeEvent
     public void onClientDisconnect(FMLNetworkEvent.ClientDisconnectionFromServerEvent event) {
-        rpc.Discord_UpdatePresence(presenceManager.gui(GuiMainMenu.class));
+        rpc.Discord_UpdatePresence(presenceManager.mainMenu());
         presenceManager.setCurState(PresenceState.MENU_MAIN);
     }
 }

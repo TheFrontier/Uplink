@@ -15,7 +15,7 @@ class PresenceManager {
     private final Config config;
 
     private final DiscordRichPresence loadingGame = new DiscordRichPresence();
-    private final DiscordRichPresence gui = new DiscordRichPresence();
+    private final DiscordRichPresence mainMenu = new DiscordRichPresence();
     private final DiscordRichPresence inGame = new DiscordRichPresence();
 
     private PresenceState curState = PresenceState.INIT;
@@ -28,8 +28,9 @@ class PresenceManager {
         loadingGame.largeImageKey = "state-default";
         loadingGame.largeImageText = "Minecraft";
 
-        gui.largeImageKey = "state-default";
-        gui.largeImageText = "Minecraft";
+        mainMenu.state = "In the Main Menu";
+        mainMenu.largeImageKey = "state-default";
+        mainMenu.largeImageText = "Minecraft";
 
         SmallDisplay smallData = dataManager.getSmallDisplays().get(this.config.smallDataUid);
 
@@ -37,14 +38,14 @@ class PresenceManager {
             return;
         }
 
-        loadingGame.smallImageKey = smallData.key;
-        loadingGame.smallImageText = smallData.name;
+        loadingGame.smallImageKey = smallData.getKey();
+        loadingGame.smallImageText = smallData.getName();
 
-        gui.smallImageKey = smallData.key;
-        gui.smallImageText = smallData.name;
+        mainMenu.smallImageKey = smallData.getKey();
+        mainMenu.smallImageText = smallData.getName();
 
-        inGame.smallImageKey = smallData.key;
-        inGame.smallImageText = smallData.name;
+        inGame.smallImageKey = smallData.getKey();
+        inGame.smallImageText = smallData.getName();
     }
 
     // ------------------- Getters -------------------- //
@@ -57,6 +58,14 @@ class PresenceManager {
         this.curState = curState;
     }
 
+    public DisplayDataManager getDataManager() {
+        return dataManager;
+    }
+
+    public Config getConfig() {
+        return config;
+    }
+
     // -------------------- Mutators -------------------- //
 
     DiscordRichPresence loadingGame() {
@@ -64,19 +73,17 @@ class PresenceManager {
         return loadingGame;
     }
 
-    DiscordRichPresence gui(Class<?> clazz) {
-        gui.state = dataManager.getGuiDisplays().get(clazz.getSimpleName());
-        gui.startTimestamp = epochSecond();
-
-        return gui;
+    DiscordRichPresence mainMenu() {
+        mainMenu.startTimestamp = epochSecond();
+        return mainMenu;
     }
 
     DiscordRichPresence ingameMP(String ip, int playerCount, int maxPlayers) {
         ServerDisplay server = dataManager.getServerDisplays().get(ip);
 
         if (server != null) {
-            inGame.largeImageKey = server.key;
-            inGame.largeImageText = "IP: " + server.name;
+            inGame.largeImageKey = server.getKey();
+            inGame.largeImageText = "IP: " + server.getName();
         } else if (this.config.hideUnknownIPs) {
             inGame.largeImageKey = "state-unknown-server";
             inGame.largeImageText = "Unknown Server";
