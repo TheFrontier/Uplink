@@ -37,14 +37,14 @@ class PresenceManager {
             return;
         }
 
-        loadingGame.smallImageKey = smallData.key;
-        loadingGame.smallImageText = smallData.name;
+        loadingGame.smallImageKey = smallData.getKey();
+        loadingGame.smallImageText = smallData.getName();
 
-        gui.smallImageKey = smallData.key;
-        gui.smallImageText = smallData.name;
+        gui.smallImageKey = smallData.getKey();
+        gui.smallImageText = smallData.getName();
 
-        inGame.smallImageKey = smallData.key;
-        inGame.smallImageText = smallData.name;
+        inGame.smallImageKey = smallData.getKey();
+        inGame.smallImageText = smallData.getName();
     }
 
     // ------------------- Getters -------------------- //
@@ -55,6 +55,14 @@ class PresenceManager {
 
     public void setCurState(PresenceState curState) {
         this.curState = curState;
+    }
+
+    public DisplayDataManager getDataManager() {
+        return dataManager;
+    }
+
+    public Config getConfig() {
+        return config;
     }
 
     // -------------------- Mutators -------------------- //
@@ -75,8 +83,8 @@ class PresenceManager {
         ServerDisplay server = dataManager.getServerDisplays().get(ip);
 
         if (server != null) {
-            inGame.largeImageKey = server.key;
-            inGame.largeImageText = "IP: " + server.name;
+            inGame.largeImageKey = server.getKey();
+            inGame.largeImageText = "IP: " + server.getName();
         } else if (this.config.hideUnknownIPs) {
             inGame.largeImageKey = "state-unknown-server";
             inGame.largeImageText = "Unknown Server";
