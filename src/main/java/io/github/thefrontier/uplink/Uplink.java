@@ -95,7 +95,7 @@ public class Uplink {
     }
 
     private void setupRichPresence(PresenceManager manager) {
-        RPC.Discord_Initialize("403412639427985412", new DiscordEventHandlers(), false, null);
+        RPC.Discord_Initialize(manager.getConfig().clientId, new DiscordEventHandlers(), false, null);
 
         Thread callbackHandler = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
