@@ -27,8 +27,15 @@ public class DisplayDataManager {
         URL smallUrl = new URL(config.displayUrls.small + config.clientId + ".json");
         URL serverUrl = new URL(config.displayUrls.server + config.clientId + ".json");
 
+        logger.trace("Using GUI Data Full URL: " + guiUrl);
+        logger.trace("Using Small Data Full URL: " + smallUrl);
+        logger.trace("Using Server Data Full URL: " + serverUrl);
+
         SmallDisplay[] smallArr = gson.fromJson(new InputStreamReader(smallUrl.openStream()), SmallDisplay[].class);
         ServerDisplay[] serverArr = gson.fromJson(new InputStreamReader(serverUrl.openStream()), ServerDisplay[].class);
+
+        logger.trace("Received Small Data: " + Arrays.toString(smallArr));
+        logger.trace("Received Server Data: " + Arrays.toString(serverArr));
 
         this.guiDisplays = gson.fromJson(new InputStreamReader(guiUrl.openStream()), GuiDisplay.class).classNameToInfo;
         this.smallDisplays = Arrays.stream(smallArr)

@@ -40,8 +40,6 @@ public class Uplink {
 
     // ---------- Instance ---------- //
 
-    private PresenceManager presenceManager;
-
     @Mod.EventHandler
     public void onConstruction(FMLConstructionEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
@@ -49,13 +47,13 @@ public class Uplink {
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
-        setupRPCData(event.getModConfigurationDirectory().toPath().resolve("Uplink.json"));
-        setupRichPresence();
+        PresenceManager manager = setupPresenceManager(event.getModConfigurationDirectory().toPath().resolve("Uplink.json"));
+        setupRichPresence(manager);
 
-        MinecraftForge.EVENT_BUS.register(new PresenceListener(RPC, presenceManager));
+        MinecraftForge.EVENT_BUS.register(new PresenceListener(RPC, manager));
     }
 
-    private void setupRPCData(Path configPath) {
+    private PresenceManager setupPresenceManager(Path configPath) {
         if (Files.notExists(configPath)) {
             try {
                 Files.copy(getClass().getResourceAsStream("Uplink.json"), configPath);
@@ -72,7 +70,7 @@ public class Uplink {
             config = gson.fromJson(Files.newBufferedReader(configPath), Config.class);
         } catch (IOException e) {
             LOGGER.error("Could not load config", e);
-            return;
+            return null;
         }
 
         DisplayDataManager dataManager;
@@ -81,14 +79,14 @@ public class Uplink {
             dataManager = new DisplayDataManager(LOGGER, config);
         } catch (Exception e) {
             LOGGER.error("Could not load display data manager", e);
-            return;
+            return null;
         }
 
-        presenceManager = new PresenceManager(dataManager, config);
+        return new PresenceManager(dataManager, config);
     }
 
-    private void setupRichPresence() {
-        RPC.Discord_Initialize("403412639427985412", new DiscordEventHandlers(), false, null);
+    private void setupRichPresence(PresenceManager manager) {
+        RPC.Discord_Initialize(manager.getConfig().clientId, new DiscordEventHandlers(), false, null);
 
         Thread callbackHandler = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
@@ -104,6 +102,6 @@ public class Uplink {
 
         Runtime.getRuntime().addShutdownHook(new Thread(callbackHandler::interrupt));
 
-        RPC.Discord_UpdatePresence(presenceManager.loadingGame());
+        RPC.Discord_UpdatePresence(manager.loadingGame());
     }
 }
