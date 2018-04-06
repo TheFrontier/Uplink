@@ -74,7 +74,7 @@ public class PresenceListener {
                 return;
             }
 
-            rpc.Discord_UpdatePresence(presenceManager.ingameMP(curServer.serverIP, 1, 1));
+            rpc.Discord_UpdatePresence(presenceManager.ingameMP(curServer.serverIP, 0, 0));
         } else {
             rpc.Discord_UpdatePresence(presenceManager.ingameSP(event.getWorld().getWorldInfo().getWorldName()));
         }
