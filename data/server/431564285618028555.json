@@ -20,6 +20,11 @@
     "name": "play.toastynetworks.net"
   },
   {
+    "uid": "hub.toastynetworks.net",
+    "key": "server-hub_toastynetworks_net",
+    "name": "hub.toastynetworks.net"
+  },
+  {
     "uid": "rev.toastynetworks.net",
     "key": "server-rev_toastynetworks_net",
     "name": "rev.toastynetworks.net"
