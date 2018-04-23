@@ -3,5 +3,15 @@
     "uid": "play.modrealms.net",
     "key": "server-play_modrealms_net",
     "name": "play.modrealms.net"
+  },
+  {
+    "uid": "dire112.modrealms.net",
+    "key": "server-dire112_modrealms_net",
+    "name": "dire112.modrealms.net"
+  },
+  {
+    "uid": "revelation.modrealms.net",
+    "key": "server-revelation_modrealms_net",
+    "name": "revelation.modrealms.net"
   }
 ]
