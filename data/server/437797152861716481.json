@@ -5,6 +5,16 @@
     "name": "play.modrealms.net"
   },
   {
+    "uid": "hub.modrealms.net",
+    "key": "server-hub_modrealms_net",
+    "name": "hub.modrealms.net"
+  },
+  {
+    "uid": "ms3.modrealms.net",
+    "key": "server-ms3_modrealms_net",
+    "name": "ms3.modrealms.net"
+  },
+  {
     "uid": "dire112.modrealms.net",
     "key": "server-dire112_modrealms_net",
     "name": "dire112.modrealms.net"
