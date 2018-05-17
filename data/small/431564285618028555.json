@@ -33,31 +33,38 @@
     "uid": "modpack-as2",
     "key": "modpack-as2",
     "name": "Agrarian Skies 2"
-  },{
+  },
+  {
     "uid": "modpack-ast",
     "key": "modpack-ast",
     "name": "Space Astronomy"
-  },{
+  },
+  {
     "uid": "modpack-cp",
     "key": "modpack-cp",
     "name": "FTB Presents: Crackpack"
-  },{
+  },
+  {
     "uid": "modpack-is",
     "key": "modpack-is",
     "name": "FTB Infinity Evolved Skyblock"
-  },{
+  },
+  {
     "uid": "modpack-ix",
     "key": "modpack-ix",
     "name": "FTB: Infinity Evolved 1.7 Expert Mode"
-  },{
+  },
+  {
     "uid": "modpack-po2",
     "key": "modpack-po2",
     "name": "Project Ozone 2"
-  },{
+  },
+  {
     "uid": "modpack-reg",
     "key": "modpack-reg",
     "name": "Regrowth"
-  },{
+  },
+  {
     "uid": "modpack-v8",
     "key": "modpack-v8",
     "name": "Vanilla 1.8.8"
