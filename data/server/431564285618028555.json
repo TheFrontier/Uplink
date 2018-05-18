@@ -1,47 +1,111 @@
-[
-  {
-    "uid": "byd.toastynetworks.net",
-    "key": "server-byd_toastynetworks_net",
-    "name": "byd.toastynetworks.net"
-  },
-  {
-    "uid": "dw20.toastynetworks.net",
-    "key": "server-dw20_toastynetworks_net",
-    "name": "dw20.toastynetworks.net"
-  },
-  {
-    "uid": "ie.toastynetworks.net",
-    "key": "server-ie_toastynetworks_net",
-    "name": "ie.toastynetworks.net"
-  },
-  {
-    "uid": "play.toastynetworks.net",
-    "key": "server-play_toastynetworks_net",
-    "name": "play.toastynetworks.net"
-  },
-  {
-    "uid": "hub.toastynetworks.net",
-    "key": "server-hub_toastynetworks_net",
-    "name": "hub.toastynetworks.net"
-  },
-  {
-    "uid": "rev.toastynetworks.net",
-    "key": "server-rev_toastynetworks_net",
-    "name": "rev.toastynetworks.net"
-  },
-  {
-    "uid": "sf3.toastynetworks.net",
-    "key": "server-sf3_toastynetworks_net",
-    "name": "sf3.toastynetworks.net"
-  },
-  {
-    "uid": "sf3-2.toastynetworks.net",
-    "key": "server-sf3-2_toastynetworks_net",
-    "name": "sf3-2.toastynetworks.net"
-  },
-  {
-    "uid": "tl.toastynetworks.net",
-    "key": "server-tl_toastynetworks_net",
-    "name": "tl.toastynetworks.net"
-  }
+[{
+		"uid": "hub.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "hub.toastynetworks.net"
+	},
+	{
+		"uid": "play.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "play.toastynetworks.net"
+	},
+	{
+		"uid": "as.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "as.toastynetworks.net"
+	},
+	{
+		"uid": "cp.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "cp.toastynetworks.net"
+	},
+	{
+		"uid": "ie.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "ie.toastynetworks.net"
+	},
+	{
+		"uid": "ie-2.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "ie-2.toastynetworks.net"
+	},
+	{
+		"uid": "ie.toastynetworks.eu",
+		"key": "server-toasty",
+		"name": "ie.toastynetworks.eu"
+	},
+	{
+		"uid": "ix.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "ix.toastynetworks.net"
+	},
+	{
+		"uid": "is.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "is.toastynetworks.net"
+	},
+	{
+		"uid": "is.toastynetworks.eu",
+		"key": "server-toasty",
+		"name": "is.toastynetworks.eu"
+	},
+	{
+		"uid": "po2.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "po2.toastynetworks.net"
+	},
+	{
+		"uid": "po2.toastynetworks.eu",
+		"key": "server-toasty",
+		"name": "po2.toastynetworks.eu"
+	},
+	{
+		"uid": "reg.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "reg.toastynetworks.net"
+	},
+	{
+		"uid": "ast.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "ast.toastynetworks.net"
+	},
+	{
+		"uid": "tl.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "tl.toastynetworks.net"
+	},
+	{
+		"uid": "v8.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "v8.toastynetworks.net"
+	},
+	{
+		"uid": "sf3.toastynetworks.eu",
+		"key": "server-toasty",
+		"name": "sf3.toastynetworks.eu"
+	},
+	{
+		"uid": "sf3.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "sf3.toastynetworks.net"
+	},
+	{
+		"uid": "sf3-2.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "sf3-2.toastynetworks.net"
+	},
+	{
+		"uid": "byd.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "byd.toastynetworks.net"
+	},
+	{
+		"uid": "rev.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "rev.toastynetworks.net"
+	},
+	{
+		"uid": "dw20.toastynetworks.net",
+		"key": "server-toasty",
+		"name": "dw20.toastynetworks.net"
+	}
 ]
