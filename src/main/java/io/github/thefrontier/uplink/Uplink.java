@@ -16,13 +16,10 @@ import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static io.github.thefrontier.uplink.Uplink.MOD_ID;
-import static io.github.thefrontier.uplink.Uplink.MOD_NAME;
-import static io.github.thefrontier.uplink.Uplink.VERSION;
+import static io.github.thefrontier.uplink.Uplink.*;
 
 @Mod(modid = MOD_ID, name = MOD_NAME, version = VERSION)
 public class Uplink {
@@ -31,7 +28,7 @@ public class Uplink {
 
     public static final String MOD_ID = "uplink";
     public static final String MOD_NAME = "Uplink";
-    public static final String VERSION = "1.0.1";
+    public static final String VERSION = "1.1.0";
     public static final Logger LOGGER = LogManager.getLogger("Uplink");
 
     @Mod.Instance(MOD_ID)
@@ -46,6 +43,8 @@ public class Uplink {
 
     // ---------- Instance ---------- //
 
+    private boolean hasErrors = false;
+
     @Mod.EventHandler
     public void onConstruction(FMLConstructionEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
@@ -54,7 +53,16 @@ public class Uplink {
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
         PresenceManager manager = setupPresenceManager(event.getModConfigurationDirectory().toPath().resolve("Uplink.json"));
+
+        if (hasErrors) {
+            return;
+        }
+
         setupRichPresence(manager);
+
+        if (hasErrors) {
+            return;
+        }
 
         PresenceListener listener = new PresenceListener(RPC, LOGGER, manager);
 
@@ -66,8 +74,10 @@ public class Uplink {
         if (Files.notExists(configPath)) {
             try {
                 Files.copy(getClass().getResourceAsStream("Uplink.json"), configPath);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 LOGGER.error("Could not copy default config to " + configPath, e);
+                hasErrors = true;
+                return null;
             }
         }
 
@@ -77,8 +87,9 @@ public class Uplink {
 
         try {
             config = gson.fromJson(Files.newBufferedReader(configPath), Config.class);
-        } catch (IOException e) {
+        } catch (Exception e) {
             LOGGER.error("Could not load config", e);
+            hasErrors = true;
             return null;
         }
 
@@ -88,6 +99,7 @@ public class Uplink {
             dataManager = new DisplayDataManager(LOGGER, config);
         } catch (Exception e) {
             LOGGER.error("Could not load display data manager", e);
+            hasErrors = true;
             return null;
         }
 
