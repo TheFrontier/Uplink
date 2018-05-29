@@ -40,6 +40,8 @@ public class Uplink {
 
     // ---------- Instance ---------- //
 
+    private boolean hasErrors = false;
+
     @Mod.EventHandler
     public void onConstruction(FMLConstructionEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
@@ -48,7 +50,16 @@ public class Uplink {
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
         PresenceManager manager = setupPresenceManager(event.getModConfigurationDirectory().toPath().resolve("Uplink.json"));
+
+        if (hasErrors) {
+            return;
+        }
+
         setupRichPresence(manager);
+
+        if (hasErrors) {
+            return;
+        }
 
         MinecraftForge.EVENT_BUS.register(new PresenceListener(RPC, manager));
     }
@@ -57,8 +68,10 @@ public class Uplink {
         if (Files.notExists(configPath)) {
             try {
                 Files.copy(getClass().getResourceAsStream("Uplink.json"), configPath);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 LOGGER.error("Could not copy default config to " + configPath, e);
+                hasErrors = true;
+                return null;
             }
         }
 
@@ -68,8 +81,9 @@ public class Uplink {
 
         try {
             config = gson.fromJson(Files.newBufferedReader(configPath), Config.class);
-        } catch (IOException e) {
+        } catch (Exception e) {
             LOGGER.error("Could not load config", e);
+            hasErrors = true;
             return null;
         }
 
@@ -79,6 +93,7 @@ public class Uplink {
             dataManager = new DisplayDataManager(LOGGER, config);
         } catch (Exception e) {
             LOGGER.error("Could not load display data manager", e);
+            hasErrors = true;
             return null;
         }
 
