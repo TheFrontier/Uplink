@@ -7,8 +7,6 @@ import io.github.thefrontier.uplink.config.display.ServerDisplay;
 import io.github.thefrontier.uplink.config.display.SmallDisplay;
 import org.apache.logging.log4j.Logger;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Arrays;
@@ -21,7 +19,7 @@ public class DisplayDataManager {
     private Map<String, SmallDisplay> smallDisplays;
     private Map<String, ServerDisplay> serverDisplays;
 
-    public DisplayDataManager(Logger logger, Config config) throws IOException, FileNotFoundException {
+    public DisplayDataManager(Logger logger, Config config) throws Exception {
         Gson gson = new GsonBuilder().create();
 
         URL guiUrl = new URL(config.displayUrls.gui + config.clientId + ".json");
