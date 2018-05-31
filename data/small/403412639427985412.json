@@ -1,12 +1,12 @@
 [
   {
-		"uid": "007dcff6-214f-4051-abad-ebd4b4a849da",
-		"key": "state-default",
-		"name": "Minecraft"
-	},
-	{
-		"uid": "3723e19c-039d-44f0-a157-1f1d9aaea828",
-		"key": "dotdash",
-		"name": "Uplink Developer"
-	}
+    "uid": "007dcff6-214f-4051-abad-ebd4b4a849da",
+    "key": "state-default",
+    "name": "Minecraft"
+  },
+  {
+    "uid": "3723e19c-039d-44f0-a157-1f1d9aaea828",
+    "key": "dotdash",
+    "name": "Uplink Developer: DotDash"
+  }
 ]
