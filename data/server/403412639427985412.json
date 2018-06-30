@@ -18,5 +18,10 @@
     "uid": "play.toastynetworks.net",
     "key": "server-play_toastynetworks_net",
     "name": "play.toastynetworks.net"
+  },
+  {
+    "uid": "localhost",
+    "key": "server-localhost",
+    "name": "Local Server"
   }
 ]
