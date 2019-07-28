@@ -43,8 +43,8 @@ configurations {
 }
 
 dependencies {
-    embed 'com.github.MinnDevelopment:Java-DiscordRPC:v1.3.1'
-    compile 'com.github.MinnDevelopment:discord-rpc-release:v3.1.0'
+    embed 'club.minnced:java-discord-rpc:v2.0.1'
+    compile 'club.minnced:java-discord-rpc:v2.0.1'
 }
 
 processResources {
