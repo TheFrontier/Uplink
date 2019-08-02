@@ -1,10 +1,10 @@
 {
-  "clientId": "403412639427985412",
-  "smallDataUid": "007dcff6-214f-4051-abad-ebd4b4a849da",
+  "clientId": "604779334816759828",
+  "smallDataUid": "cascade",
   "hideUnknownIPs": false,
   "displayUrls": {
-    "gui": "https://raw.githubusercontent.com/TheFrontier/Uplink/data/data/gui/",
-    "server": "https://raw.githubusercontent.com/TheFrontier/Uplink/data/data/server/",
-    "small": "https://raw.githubusercontent.com/TheFrontier/Uplink/data/data/small/"
+    "gui": "https://raw.githubusercontent.com/ijo42/Uplink/data/data/gui/",
+    "server": "https://raw.githubusercontent.com/ijo42/Uplink/data/data/server/",
+    "small": "https://raw.githubusercontent.com/ijo42/Uplink/data/data/small/"
   }
 }
