@@ -37,7 +37,7 @@ public class PresenceListener {
             curTick = 0;
 
             try {
-                int playerCount = Minecraft.getMinecraft().getConnection().getPlayerInfoMap().size();
+                int playerCount = Minecraft.getMinecraft().getCurrentServerData().playerList.length();
                 int maxPlayers = Minecraft.getMinecraft().getConnection().currentServerMaxPlayers;
 
                 if (this.curPlayerCount != playerCount) {
@@ -73,7 +73,6 @@ public class PresenceListener {
                 // Player is already in a server.
                 return;
             }
-
             rpc.Discord_UpdatePresence(presenceManager.ingameMP(curServer.serverIP, 0, 0));
         } else {
             rpc.Discord_UpdatePresence(presenceManager.ingameSP(event.getWorld().getWorldInfo().getWorldName()));
