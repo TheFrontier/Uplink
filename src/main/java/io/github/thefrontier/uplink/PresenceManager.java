@@ -7,8 +7,6 @@ import io.github.thefrontier.uplink.config.display.ServerDisplay;
 import io.github.thefrontier.uplink.config.display.SmallDisplay;
 import io.github.thefrontier.uplink.util.MiscUtil;
 
-import net.minecraftforge.fml.common.Loader;
-
 import static io.github.thefrontier.uplink.util.MiscUtil.epochSecond;
 
 class PresenceManager {
@@ -19,12 +17,6 @@ class PresenceManager {
     private final DiscordRichPresence loadingGame = new DiscordRichPresence();
     private final DiscordRichPresence mainMenu = new DiscordRichPresence();
     private final DiscordRichPresence inGame = new DiscordRichPresence();
-
-    public static final long startTime;
-
-    static{
-        startTime = epochSecond();
-    }
 
     private PresenceState curState = PresenceState.INIT;
 
@@ -77,14 +69,12 @@ class PresenceManager {
     // -------------------- Mutators -------------------- //
 
     DiscordRichPresence loadingGame() {
-        int mods = (int) Loader.instance().getModList().stream().count();
-        loadingGame.startTimestamp = startTime;
-        loadingGame.details = String.format("With %d mods", mods);
+        loadingGame.startTimestamp = epochSecond();
         return loadingGame;
     }
 
     DiscordRichPresence mainMenu() {
-        mainMenu.startTimestamp = startTime;
+        mainMenu.startTimestamp = epochSecond();
 
         return mainMenu;
     }
@@ -103,9 +93,9 @@ class PresenceManager {
             inGame.largeImageText = "IP: " + ip;
         }
 
-        inGame.state = "Playing with friends <3";
+        inGame.state = "In a Server";
         inGame.details = "IGN: " + MiscUtil.getIGN();
-        inGame.startTimestamp = startTime;
+        inGame.startTimestamp = epochSecond();
         inGame.partyId = ip;
         inGame.partySize = playerCount;
         inGame.partyMax = maxPlayers;
@@ -121,9 +111,9 @@ class PresenceManager {
     }
 
     DiscordRichPresence ingameSP(String world) {
-        inGame.state = "Lonely play..";
+        inGame.state = "In Singleplayer";
         inGame.details = "IGN: " + MiscUtil.getIGN();
-        inGame.startTimestamp = startTime;
+        inGame.startTimestamp = epochSecond();
         inGame.largeImageKey = "state-default";
         inGame.largeImageText = "World: " + world;
         inGame.partyId = "";
